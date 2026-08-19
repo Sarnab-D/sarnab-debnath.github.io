@@ -43,6 +43,100 @@
 }
 
 /* =========================================================
+   AMBIENT BACKGROUND ANIMATION
+   Soft, slow-moving blurred color blobs behind the whole page,
+   plus a very faint grid texture for depth. Everything here is
+   z-index: -1, so it always sits behind real content.
+   ========================================================= */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  width: 42vw;
+  height: 42vw;
+  max-width: 560px;
+  max-height: 560px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.28;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.orb--amber {
+  background: var(--amber);
+  top: -10%;
+  left: -8%;
+  animation: driftA 26s ease-in-out infinite;
+}
+
+.orb--cyan {
+  background: var(--cyan);
+  top: 20%;
+  right: -12%;
+  animation: driftB 32s ease-in-out infinite;
+}
+
+.orb--rose {
+  background: var(--rose);
+  bottom: -14%;
+  left: 22%;
+  width: 34vw;
+  height: 34vw;
+  max-width: 460px;
+  max-height: 460px;
+  opacity: 0.18;
+  animation: driftC 38s ease-in-out infinite;
+}
+
+/* three slightly different drift paths so the motion doesn't feel synced/robotic */
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(6vw, 8vh) scale(1.08); }
+  66%      { transform: translate(-4vw, 4vh) scale(0.96); }
+}
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-7vw, 10vh) scale(1.1); }
+}
+@keyframes driftC {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%      { transform: translate(5vw, -6vh) scale(1.05); }
+  70%      { transform: translate(-3vw, -3vh) scale(0.95); }
+}
+
+/* faint fixed grid for subtle texture — no motion, just depth */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+}
+
+/* light theme: orbs read as loud/muddy with 'screen' blending on a white bg — switch approach */
+:root[data-theme="light"] .orb {
+  mix-blend-mode: multiply;
+  opacity: 0.14;
+  filter: blur(130px);
+}
+:root[data-theme="light"] .bg-grid { opacity: 0.5; }
+
+/* respect reduced-motion: keep the soft color, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
+}
+
+/* =========================================================
    RESET / BASE
    ========================================================= */
 * { box-sizing: border-box; }

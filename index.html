@@ -15,6 +15,16 @@
 </head>
 <body>
 
+  <!-- ============ AMBIENT BACKGROUND ============ -->
+  <!-- Purely decorative, slow-moving glow blobs behind all content.
+       aria-hidden because it carries no information for screen readers. -->
+  <div class="bg-ambient" aria-hidden="true">
+    <span class="orb orb--amber"></span>
+    <span class="orb orb--cyan"></span>
+    <span class="orb orb--rose"></span>
+    <div class="bg-grid"></div>
+  </div>
+
   <!-- ============ TAB BAR / NAV ============ -->
   <!-- Styled like a code editor's open-tabs bar. Each nav link is a "tab". -->
   <header class="tabbar" id="tabbar">
