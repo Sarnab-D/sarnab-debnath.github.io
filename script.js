@@ -34,7 +34,7 @@ const cursorEl = document.getElementById('cursor');
 
 const COMMAND = 'whoami --verbose';
 const OUTPUT_LINES = [
-  { key: 'name', value: 'Your Name' },
+  { key: 'name', value: 'Sarnab Debnath' },
   { key: 'role', value: 'CS student, aspiring developer' },
   { key: 'status', value: 'building things & open to internships' },
 ];
