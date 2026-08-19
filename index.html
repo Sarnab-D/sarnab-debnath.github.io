@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarnab Debnath — CS Student &amp; Developer</title>
+  <meta name="description" content="Portfolio of Sarnab Debnath, a Computer Science student.">
+
+  <!-- Fonts: IBM Plex Mono for the "editor" voice, Inter for reading copy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ TAB BAR / NAV ============ -->
+  <!-- Styled like a code editor's open-tabs bar. Each nav link is a "tab". -->
+  <header class="tabbar" id="tabbar">
+    <div class="tabbar-inner">
+      <a href="#top" class="tab tab--brand">
+        <span class="dot" aria-hidden="true"></span>
+        sarnab-debnath<span class="accent-cyan">.dev</span>
+      </a>
+
+      <nav class="tabs" aria-label="Primary">
+        <a href="#about" class="tab" data-tab>about<span class="ext">.md</span></a>
+        <a href="#projects" class="tab" data-tab>projects<span class="ext">/</span></a>
+        <a href="#skills" class="tab" data-tab>skills<span class="ext">.json</span></a>
+        <a href="#contact" class="tab" data-tab>contact<span class="ext">.sh</span></a>
+      </nav>
+
+      <div class="tabbar-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <span class="theme-icon" id="themeIcon">&#9789;</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <!-- The signature element: a "booting" terminal window that types itself out -->
+        <div class="terminal" role="img" aria-label="Terminal introduction animation">
+          <div class="terminal-bar">
+            <span class="tl-dot tl-red"></span>
+            <span class="tl-dot tl-yellow"></span>
+            <span class="tl-dot tl-green"></span>
+            <span class="terminal-title">zsh — whoami</span>
+          </div>
+          <div class="terminal-body">
+            <p class="line">
+              <span class="prompt">guest@portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span>
+              <span id="typedCommand" class="typed"></span><span class="cursor" id="cursor">&#9608;</span>
+            </p>
+            <div id="typedOutput" class="output"></div>
+          </div>
+        </div>
+
+        <div class="hero-meta">
+          <p class="eyebrow">// computer science student · open to internships</p>
+          <h1 class="hero-heading">Sarnab Debnath</h1>
+          <p class="hero-sub">
+            I build things for the web and I'm still figuring out my favorite stack —
+            that's the fun part. This site is both my portfolio and my sandbox.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn--primary">view projects <span aria-hidden="true">&rarr;</span></a>
+            <a href="#contact" class="btn btn--ghost">get in touch</a>
+            <a href="resume.pdf" download class="btn btn--ghost" id="resumeBtn">download resume <span aria-hidden="true">&darr;</span></a>
+          </div>
+          <ul class="hero-tags" aria-label="Quick facts">
+            <li><span class="key">school</span><span class="val">Parul University</span></li>
+            <li><span class="key">year</span><span class="val">4th Year</span></li>
+            <li><span class="key">based_in</span><span class="val">Vadodara</span></li>
+          </ul>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll to about section">
+        <span>scroll</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="section-inner">
+        <p class="filepath">~/portfolio/<span class="accent-amber">about.md</span></p>
+        <h2 class="section-title">About</h2>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              <span class="md-token">##</span> Hey, I'm <strong>Sarnab Debnath</strong> — a Computer Science
+              student who likes turning half-formed ideas into working software. I care about
+              writing code that's readable six months from now, and I'm currently deep in
+              learning how the web actually fits together, front to back.
+            </p>
+            <p>
+              Outside of coursework, I like picking a small project, breaking it on purpose,
+              and figuring out why. Replace this paragraph with your real story — what you're
+              studying, what pulled you toward CS, and what you're chasing next.
+            </p>
+          </div>
+
+          <div class="about-facts">
+            <h3 class="facts-title">// currently</h3>
+            <ul class="facts-list">
+              <li><span class="fact-label">Learning</span> React &amp; system design basics</li>
+              <li><span class="fact-label">Building</span> this portfolio, one commit at a time</li>
+              <li><span class="fact-label">Looking for</span> a summer internship</li>
+              <li><span class="fact-label">Also into</span> chess, coffee, late-night debugging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section section--panel">
+      <div class="section-inner">
+        <p class="filepath">~/portfolio/<span class="accent-amber">projects</span>/</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">A few things I've shipped or am still hacking on. Swap these for your own.</p>
+
+        <!-- Filter buttons: built from the tags on the cards below via script.js -->
+        <div class="filter-row" id="filterRow" aria-label="Filter projects by technology">
+          <button class="filter-btn is-active" data-filter="all">all</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project-card" data-tags="JavaScript,CSS Grid,LocalStorage">
+            <div class="project-card-head">
+              <span class="file-icon">&lt;/&gt;</span>
+              <span class="project-filename">task-tracker.js</span>
+            </div>
+            <p class="project-comment">// a minimal to-do app with local storage persistence</p>
+            <p class="project-desc">
+              Built to practice vanilla JS state management before touching a framework.
+              Drag-to-reorder, keyboard shortcuts, and a dark/light toggle.
+            </p>
+            <ul class="tag-list">
+              <li>JavaScript</li>
+              <li>CSS Grid</li>
+              <li>LocalStorage</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="proj-link">$ open live-demo &rarr;</a>
+              <a href="#" class="proj-link proj-link--muted">$ view source</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tags="Python,REST API,argparse">
+            <div class="project-card-head">
+              <span class="file-icon">&lt;/&gt;</span>
+              <span class="project-filename">weather-cli.py</span>
+            </div>
+            <p class="project-comment">// a command-line weather lookup tool</p>
+            <p class="project-desc">
+              My first project that talks to a real API. Handles bad input gracefully
+              and caches results so I don't hammer the free tier.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>REST API</li>
+              <li>argparse</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="proj-link">$ open live-demo &rarr;</a>
+              <a href="#" class="proj-link proj-link--muted">$ view source</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tags="HTML,CSS,JavaScript">
+            <div class="project-card-head">
+              <span class="file-icon">&lt;/&gt;</span>
+              <span class="project-filename">this-site.html</span>
+            </div>
+            <p class="project-comment">// the site you're looking at right now</p>
+            <p class="project-desc">
+              Hand-written HTML/CSS/JS, no framework, no build step — on purpose.
+              A place to keep practicing the fundamentals as I add to it.
+            </p>
+            <ul class="tag-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="proj-link">$ open live-demo &rarr;</a>
+              <a href="#" class="proj-link proj-link--muted">$ view source</a>
+            </div>
+          </article>
+
+          <!-- Add more <article class="project-card" data-tags="Tag1,Tag2"> blocks here as you build things -->
+          <article class="project-card project-card--add">
+            <span class="add-icon">+</span>
+            <p>Your next project goes here</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="section-inner">
+        <p class="filepath">~/portfolio/<span class="accent-amber">skills.json</span></p>
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-json" aria-label="Skills, formatted like a JSON object">
+          <p class="json-line json-l0">{</p>
+
+          <p class="json-line json-l1"><span class="json-key">"languages"</span>: [
+            <span class="json-str">"JavaScript"</span>, <span class="json-str">"Python"</span>, <span class="json-str">"Java"</span>, <span class="json-str">"C++"</span>
+          ],</p>
+
+          <p class="json-line json-l1"><span class="json-key">"web"</span>: [
+            <span class="json-str">"HTML"</span>, <span class="json-str">"CSS"</span>, <span class="json-str">"React"</span>, <span class="json-str">"Node.js"</span>
+          ],</p>
+
+          <p class="json-line json-l1"><span class="json-key">"tools"</span>: [
+            <span class="json-str">"Git"</span>, <span class="json-str">"VS Code"</span>, <span class="json-str">"Figma"</span>, <span class="json-str">"Linux"</span>
+          ],</p>
+
+          <p class="json-line json-l1"><span class="json-key">"currently_learning"</span>: [
+            <span class="json-str">"Data Structures"</span>, <span class="json-str">"System Design"</span>
+          ]</p>
+
+          <p class="json-line json-l0">}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section--panel">
+      <div class="section-inner section-inner--narrow">
+        <p class="filepath">~/portfolio/<span class="accent-amber">contact.sh</span></p>
+        <h2 class="section-title">Get in touch</h2>
+        <p class="section-sub">
+          Internships, collabs, or just want to talk about a bug you can't solve — my inbox is open.
+        </p>
+
+        <!-- Front-end only: wire this up to a real backend/service (e.g. Formspree) before going live -->
+        <form class="contact-form" id="contactForm">
+          <label class="field">
+            <span class="field-label">--name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label class="field">
+            <span class="field-label">--email</span>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </label>
+          <label class="field">
+            <span class="field-label">--message</span>
+            <textarea name="message" rows="5" placeholder="What's up?" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full">
+            $ ./send.sh <span aria-hidden="true">&rarr;</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="social-row">
+          <a href="#" class="social-link">github</a>
+          <a href="#" class="social-link">linkedin</a>
+          <a href="mailto:you@email.com" class="social-link">email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Sarnab Debnath — built line by line while learning web dev.</p>
+    <p class="footer-cursor">still shipping<span class="cursor cursor--footer">&#9608;</span></p>
+  </footer>
+
+  <!-- Scroll progress bar: fills left-to-right as you scroll down the page -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Back-to-top button: hidden until you scroll down a bit -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
