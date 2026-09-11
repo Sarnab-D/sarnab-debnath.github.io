@@ -119,7 +119,8 @@ GitHub: Sarnab-D
 LinkedIn: Sarnab Debnath
 
 •
-Email: 2303031570052@paruluniversity.ac.in
+Email: 2303031570052@paruluniversity.ac.in [Professional]
+       sarnabdebnath2003@gmail.com [personal]
 
 License
 
